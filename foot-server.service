@@ -1,0 +1,10 @@
+[Service]
+ExecStart=/usr/bin/foot --server=3
+Environment=WAYLAND_DISPLAY=wayland-1
+UnsetEnvironment=LISTEN_PID LISTEN_FDS LISTEN_FDNAMES
+NonBlocking=true
+
+[Unit]
+Requires=foot-server.socket
+Description=Foot terminal server mode
+Documentation=man:foot(1)

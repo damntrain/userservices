@@ -1,0 +1,11 @@
+[Unit]
+Description=Tmux server
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/tmux new -s $USER -d
+ExecStop=/usr/bin/tmux kill-server
+Restart=on-failure
+
+[Install]
+WantedBy=foot-server.service
